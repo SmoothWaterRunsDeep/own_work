@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>好吃点</title>
+    <script>
+        window.onload=function () {
+            var box_all=document.getElementById("box_all");
+            var login=document.getElementById("login");
+            var top_left_special=document.getElementById('top_left_special');
+            top_left_special.onclick=function () {
+                box_all.style.display='block';
+                login.style.display='block';
+            }
+            var close_box=document.getElementById( "close_box");
+            close_box.onclick=function () {
+                login.style.display='none';
+                box_all.style.display='none';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box_all"></div>
+    <div id="login">
+        <span id="close_box">❌</span>
+    </div>
+    <!-- top -->
+    <div class="top">
+        <div class="top-content">
+            <div class="top-left">
+                <a href="">欢迎来到好吃点商城</a>
+                <a href="javascript:;" id="top_left_special" class="top-left-special">请登录</a>
+                    <a href="">免费注册</a>
+            </div>
+
+            <div class="top-right">
+                <div class="top-right-content">
+                    <a href="">会员中心</a>
+                    <span>|</span>
+                    <a href="">我的订单</a>
+                    <span>|</span>
+                    <a href="">我的购物车</a>
+                    <span>|</span>
+                    <a href="">客户服务</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  logo-->
+    <div class="logo">
+        <div class="logo-search clearfix">
+            <input type="search" placeholder="请输入关键字搜索" class="logo-search-input">
+            <input type="submit" value="搜索" class="logo-search-button">
+        </div>
+        <div class="logo-phone">
+            <div class="logo-phone-text">
+                <span class="logo-phone-hotline">24小时热线：</span>
+                <br>
+                <span class="logo-phone-number">400-888-888</span>
+            </div>
+        </div>
+    </div>
+    <!-- nav -->
+    <div class="nav">
+        <div class="nav-wrap clearfix">
+            <a href="">首页
+                <svg class="nav-wrap-icon" aria-hidden="true">
+                    <use xlink:href="#icon-arrows2-b-copy"></use>
+                </svg>
+            </a>
+
+            <b></b>
+            <a href="">热销产品</a>
+            <b></b>
+            <a href="">坚果炒货</a>
+            <b></b>
+            <a href="">粮油专区</a>
+            <b></b>
+            <a href="">特惠专区</a>
+        </div>
+    </div>
+    <div class="banner">
+        <img src="./images/banner.jpg" alt="">
+    </div>
+    <!-- fastdoor -->
+    <div class="fastdoor clearfix">
+        <a href="">
+            <div class="fastdoor-wrap clearfix">
+                <div class="fastdoor-wrap-content">
+                    <div class="fastdoor-wrap-bottom">
+                        <img src="./images/firstPath-1.jpg" alt="">
+                    </div>
+                    <div class="fastdoor-wrap-mid">
+                        <img src="./images/top.png" alt="">
+                    </div>
+                    <div class="fastdoor-wrap-text">
+                        每日上新
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="">
+            <div class="fastdoor-wrap-middle">
+                <div class="fastdoor-wrap-content">
+                    <div class="fastdoor-wrap-bottom">
+                        <img src="./images/firstPath-2.jpg" alt="">
+                    </div>
+                    <div class="fastdoor-wrap-mid">
+                        <img src="./images/top.png" alt="">
+                    </div>
+                    <div class="fastdoor-wrap-text">
+                        折扣商品
+                    </div>
+                </div>
+            </div>
+        </a>
+        <a href="">
+            <div class="fastdoor-wrap">
+                <div class="fastdoor-wrap-content">
+                    <div class="fastdoor-wrap-bottom">
+                        <img src="./images/firstPath-3.jpg" alt="">
+                    </div>
+                    <div class="fastdoor-wrap-mid">
+                        <img src="./images/top.png" alt="">
+                    </div>
+                    <div class="fastdoor-wrap-text">
+                        热卖商品
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+    <!-- recommend -->
+    <div class="recommend">
+        <div class="recommend-title">
+            <div class="recommend-title-content">店家推荐</div>
+        </div>
+        <div class="recommend-underline"></div>
+        <div class="recommend-wrap clearfix">
+            <div class="recommend-content-float">
+                <a href="" class="recommed-wrap-content clearfix">
+                    <div class="recommend-content-bottom">
+                        <img src="./images/fruit-1.jpg" alt="">
+                    </div>
+                    <div class="recommend-content-mid">
+                        限时抢购
+                        <svg class="recommend-content-icon" aria-hidden="true">
+                            <use xlink:href="#icon-shizhongclock74"></use>
+                        </svg>
+                    </div>
+                </a>
+                <div class="recommend-wrap-buy">
+                    <div class="recommend-buy-title">越南小青芒5斤装</div>
+                    <div class="recommend-buy-price">
+                        <span class="recommend-price-rmb">￥</span>
+                        <span class="recommend-price-num">39.00</span>
+                        <span class="recommend-price-origin">原价70.00</span>
+                    </div>
+                    <div class="recommend-buy-button">
+                        <a href="">立即抢购</a>
+                    </div>
+                </div>
+            </div>
+            <div class="recommend-content-float">
+                <a href="" class="recommed-wrap-content">
+                    <div class="recommend-content-bottom">
+                        <img src="./images/fruit-2.jpg" alt="">
+                    </div>
+                    <div class="recommend-content-mid">
+                        限时抢购
+                        <svg class="recommend-content-icon" aria-hidden="true">
+                            <use xlink:href="#icon-shizhongclock74"></use>
+                        </svg>
+                    </div>
+                </a>
+                <div class="recommend-wrap-buy">
+                    <div class="recommend-buy-title">新疆库尔勒香梨5斤装</div>
+                    <div class="recommend-buy-price">
+                        <span class="recommend-price-rmb">￥</span>
+                        <span class="recommend-price-num">48.00</span>
+                        <span class="recommend-price-origin">原价88.00</span>
+                    </div>
+                    <div class="recommend-buy-button">
+                        <a href="">立即抢购</a>
+                    </div>
+                </div>
+            </div>
+            <div class="recommend-content-float">
+                <a href="" class="recommed-wrap-content">
+                    <div class="recommend-content-bottom">
+                        <img src="./images/fruit-3.jpg" alt="">
+                    </div>
+                    <div class="recommend-content-mid">
+                        限时抢购
+                        <svg class="recommend-content-icon" aria-hidden="true">
+                            <use xlink:href="#icon-shizhongclock74"></use>
+                        </svg>
+                    </div>
+                </a>
+                <div class="recommend-wrap-buy">
+                    <div class="recommend-buy-title">越南白心火龙果5斤装</div>
+                    <div class="recommend-buy-price">
+                        <span class="recommend-price-rmb">￥</span>
+                        <span class="recommend-price-num">69.00</span>
+                        <span class="recommend-price-origin">原价89.00</span>
+                    </div>
+                    <div class="recommend-buy-button">
+                        <a href="">立即抢购</a>
+                    </div>
+                </div>
+            </div>
+            <div class="recommend-content-float">
+                <a href="" class="recommed-wrap-content">
+                    <div class="recommend-content-bottom">
+                        <img src="./images/fruit-4.jpg" alt="">
+                    </div>
+                    <div class="recommend-content-mid">
+                        限时抢购
+                        <svg class="recommend-content-icon" aria-hidden="true">
+                            <use xlink:href="#icon-shizhongclock74"></use>
+                        </svg>
+                    </div>
+                </a>
+                <div class="recommend-wrap-buy">
+                    <div class="recommend-buy-title">台湾金钻凤梨2只装#7</div>
+                    <div class="recommend-buy-price">
+                        <span class="recommend-price-rmb">￥</span>
+                        <span class="recommend-price-num">78.00</span>
+                        <span class="recommend-price-origin">原价93.00</span>
+                    </div>
+                    <div class="recommend-buy-button">
+                        <a href="">立即抢购</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- nut -->
+    <div class="nut">
+        <div class="nut-title">
+            <span class="nut-title-left">坚果炒货区</span>
+            <span class="nut-tile-line">/</span>
+            <span class="nut-title-mid">MISDIFHYA</span>
+            <a href="" class="nut-title-right">更多商品 >></a>
+        </div>
+        <div class="nut-underline"></div>
+        <div class="nut-content">
+            <div class="nut-content-wrap">
+                <div class="nut-wrap-img">
+                    <img src="./images/nut.1.jpg" alt="">
+                </div>
+                <div class="nut-content-price">
+                    <span class="nut-price-title">陕南薄皮核桃</span>
+                    <br>
+                    <span class="nut-price-num">￥24.80</span>
+                    <span class="nut-price-weight">2斤装</span>
+                    <br>
+                    <span class="nut-price-origin">原价：￥30.80元</span>
+                </div>
+            </div>
+            <div class="nut-content-wrap">
+                <div class="nut-wrap-img">
+                    <img src="./images/nut.2.jpg" alt="">
+                </div>
+                <div class="nut-content-price">
+                    <span class="nut-price-title">美国山核桃</span>
+                    <br>
+                    <span class="nut-price-num">￥52.80</span>
+                    <span class="nut-price-weight">2斤装</span>
+                    <br>
+                    <span class="nut-price-origin">原价：￥46.80元</span>
+                </div>
+            </div>
+            <div class="nut-content-wrap">
+                <div class="nut-wrap-img">
+                    <img src="./images/nut.3.jpg" alt="">
+                </div>
+                <div class="nut-content-price">
+                    <span class="nut-price-title">农家自产天然优质花生</span>
+                    <br>
+                    <span class="nut-price-num">￥24.80</span>
+                    <span class="nut-price-weight">2斤装</span>
+                    <br>
+                    <span class="nut-price-origin">原价：￥30.80元</span>
+                </div>
+            </div>
+            <div class="nut-content-wrap">
+                <div class="nut-wrap-img">
+                    <img src="./images/nut.4.jpg" alt="">
+                </div>
+                <div class="nut-content-price">
+                    <span class="nut-price-title">深山野生板栗</span>
+                    <br>
+                    <span class="nut-price-num">￥24.80</span>
+                    <span class="nut-price-weight">2斤装</span>
+                    <br>
+                    <span class="nut-price-origin">原价：￥30.80元</span>
+                </div>
+            </div>
+            <div class="nut-content-wrap">
+                <div class="nut-wrap-img">
+                    <img src="./images/nut.5.jpg" alt="">
+                </div>
+                <div class="nut-content-price">
+                    <span class="nut-price-title">进口优质开口松子</span>
+                    <br>
+                    <span class="nut-price-num">￥24.80</span>
+                    <span class="nut-price-weight">2斤装</span>
+                    <br>
+                    <span class="nut-price-origin">原价：￥30.80元</span>
+                </div>
+            </div>
+            <div class="nut-content-wrap">
+                <div class="nut-wrap-img">
+                    <img src="./images/nut.6.jpg" alt="">
+                </div>
+                <div class="nut-content-price">
+                    <span class="nut-price-title">草原榛子</span>
+                    <br>
+                    <span class="nut-price-num">￥24.80</span>
+                    <span class="nut-price-weight">2斤装</span>
+                    <br>
+                    <span class="nut-price-origin">原价：￥30.80元</span>
+                </div>
+            </div>
+            <div class="nut-content-wrap">
+                <div class="nut-wrap-img">
+                    <img src="./images/nut.7.jpg" alt="">
+                </div>
+                <div class="nut-content-price">
+                    <span class="nut-price-title">大个甜味杏仁</span>
+                    <br>
+                    <span class="nut-price-num">￥24.80</span>
+                    <span class="nut-price-weight">2斤装</span>
+                    <br>
+                    <span class="nut-price-origin">原价：￥30.80元</span>
+                </div>
+            </div>
+            <div class="nut-content-wrap">
+                <div class="nut-wrap-img">
+                    <img src="./images/nut.8.jpg" alt="">
+                </div>
+                <div class="nut-content-price">
+                    <span class="nut-price-title">腰果世界</span>
+                    <br>
+                    <span class="nut-price-num">￥24.80</span>
+                    <span class="nut-price-weight">2斤装</span>
+                    <br>
+                    <span class="nut-price-origin">原价：￥30.80元</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ad">
+        <img src="./images/ad.jpg" alt="">
+    </div>
+
+    <!-- oil -->
+    <div class="oil">
+        <div class="oil-title">
+            <span class="oil-title-left">粮油专区</span>
+            <span class="oil-tile-line">/</span>
+            <span class="oil-title-mid">MISDIFHYA</span>
+            <a href="" class="oil-title-right">更多商品 >></a>
+        </div>
+        <div class="oil-underline"></div>
+        <div class="oil-content">
+            <div class="oil-content-wrap">
+                <div class="oil-wrap-img">
+                    <img src="./images/oil.1.jpg" alt="">
+                </div>
+                <div class="oil-content-price">
+                    <span class="oil-price-title">陕南薄皮核桃</span>
+                    <br>
+                    <span class="oil-price-num">￥24.80</span>
+                    <span class="oil-price-weight">2斤装</span>
+                    <br>
+                    <span class="oil-price-origin">原价：￥30.80元</span>
+                </div>
+            </div>
+            <div class="oil-content-wrap">
+                <div class="oil-wrap-img">
+                    <img src="./images/oil.2.jpg" alt="">
+                </div>
+                <div class="oil-content-price">
+                    <span class="oil-price-title">美国山核桃</span>
+                    <br>
+                    <span class="oil-price-num">￥52.80</span>
+                    <span class="oil-price-weight">2斤装</span>
+                    <br>
+                    <span class="oil-price-origin">原价：￥46.80元</span>
+                </div>
+            </div>
+            <div class="oil-content-wrap">
+                <div class="oil-wrap-img">
+                    <img src="./images/oil3.jpg" alt="">
+                </div>
+                <div class="oil-content-price">
+                    <span class="oil-price-title">农家自产天然优质花生</span>
+                    <br>
+                    <span class="oil-price-num">￥24.80</span>
+                    <span class="oil-price-weight">2斤装</span>
+                    <br>
+                    <span class="oil-price-origin">原价：￥30.80元</span>
+                </div>
+            </div>
+            <div class="oil-content-wrap">
+                <div class="oil-wrap-img">
+                    <img src="./images/oil4.jpg" alt="">
+                </div>
+                <div class="oil-content-price">
+                    <span class="oil-price-title">深山野生板栗</span>
+                    <br>
+                    <span class="oil-price-num">￥24.80</span>
+                    <span class="oil-price-weight">2斤装</span>
+                    <br>
+                    <span class="oil-price-origin">原价：￥30.80元</span>
+                </div>
+            </div>
+            <div class="oil-content-wrap">
+                <div class="oil-wrap-img">
+                    <img src="./images/oil.5.jpg" alt="">
+                </div>
+                <div class="oil-content-price">
+                    <span class="oil-price-title">进口优质开口松子</span>
+                    <br>
+                    <span class="oil-price-num">￥24.80</span>
+                    <span class="oil-price-weight">2斤装</span>
+                    <br>
+                    <span class="oil-price-origin">原价：￥30.80元</span>
+                </div>
+            </div>
+            <div class="oil-content-wrap">
+                <div class="oil-wrap-img">
+                    <img src="./images/oil.6.jpg" alt="">
+                </div>
+                <div class="oil-content-price">
+                    <span class="oil-price-title">草原榛子</span>
+                    <br>
+                    <span class="oil-price-num">￥24.80</span>
+                    <span class="oil-price-weight">2斤装</span>
+                    <br>
+                    <span class="oil-price-origin">原价：￥30.80元</span>
+                </div>
+            </div>
+            <div class="oil-content-wrap">
+                <div class="oil-wrap-img">
+                    <img src="./images/oil.7.jpg" alt="">
+                </div>
+                <div class="oil-content-price">
+                    <span class="oil-price-title">大个甜味杏仁</span>
+                    <br>
+                    <span class="oil-price-num">￥24.80</span>
+                    <span class="oil-price-weight">2斤装</span>
+                    <br>
+                    <span class="oil-price-origin">原价：￥30.80元</span>
+                </div>
+            </div>
+            <div class="oil-content-wrap">
+                <div class="oil-wrap-img">
+                    <img src="./images/oil.8.jpg" alt="">
+                </div>
+                <div class="oil-content-price">
+                    <span class="oil-price-title">腰果世界</span>
+                    <br>
+                    <span class="oil-price-num">￥24.80</span>
+                    <span class="oil-price-weight">2斤装</span>
+                    <br>
+                    <span class="oil-price-origin">原价：￥30.80元</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- bottom -->
+    <div class="bottom">
+        <div class="bottom-content clearfix">
+            <div class="bottom-content-ul">
+                <ul>
+                    <li class="bottom-ul-title">
+                        <a href="">新手指南</a>
+                    </li>
+                    <li>
+                        <a href="">购物流程</a>
+                    </li>
+                    <li>
+                        <a href="">账户注册</a>
+                    </li>
+                    <li>
+                        <a href="">联系客服</a>
+                    </li>
+                    <li>
+                        <a href="">常见问题</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content-ul">
+                <ul>
+                    <li class="bottom-ul-title">付款方式</a>
+                    </li>
+                    <li>
+                        <a href="">货到付款</a>
+                    </li>
+                    <li>
+                        <a href="">在线支付</a>
+                    </li>
+                    <li>
+                        <a href="">在线充值</a>
+                    </li>
+                    <li>
+                        <a href="">分期付款</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content-ul">
+                <ul>
+                    <li class="bottom-ul-title">配送服务</a>
+                    </li>
+                    <li>
+                        <a href="">上门自提</a>
+                    </li>
+                    <li>
+                        <a href="">配送范围</a>
+                    </li>
+                    <li>
+                        <a href="">配送时间</a>
+                    </li>
+                    <li>
+                        <a href="">配送需知</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content-ul">
+                <ul>
+                    <li class="bottom-ul-title">售后服务</a>
+                    </li>
+                    <li>
+                        <a href="">关于换货</a>
+                    </li>
+                    <li>
+                        <a href="">关于退款</a>
+                    </li>
+                    <li>
+                        <a href="">取消订单</a>
+                    </li>
+                    <li>
+                        <a href="">投诉建议</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content-ul">
+                <ul>
+                    <li class="bottom-ul-title">关于我们</a>
+                    </li>
+                    <li class="bottom-ul-contact">
+                        <a href="">联系我们</a>
+                    </li>
+                    <li class="bottom-ul-contact">
+                        <a href="">招贤纳士</a>
+                    </li>
+                    <li class="bottom-ul-contact">
+                        <a href="">业务合作</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content-photo">
+                <div class="bottom-photo-logo">
+                    <img src="./images/logo.png" alt="">
+                </div>
+                <div class="bottom-photo-QRcode">
+                    <img src="./images/QR.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div class="footer">
+        <div class="footer-content">
+            Copyright © 2004-2016 好吃点hchdian.com 版权所有
+        </div>
+    </div>
+    <script src="./font/iconfont.js"></script>
+</body>
+
+</html>
