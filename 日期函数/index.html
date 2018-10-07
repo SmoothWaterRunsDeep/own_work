@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width==, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 180px;
+            background: rgb(0, 81, 255);
+            text-align: center;
+            margin: 100px auto;
+        }
+        p{
+            font-size: 16px;
+            padding-top: 10px;
+            color: white;
+        }
+        span{
+            display: block;
+            width: 75px;
+            height: 75px;
+            background: rgb(50, 205, 58);
+            font-size: 35px;
+            font-weight: bold;
+            line-height: 75px;
+            margin: 20px auto;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var box = document.getElementById('box');
+            var sons = box.children;
+
+            var date = new Date();
+            var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六']
+            sons[0].innerHTML= date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()+"日"+"  "+arr[date.getDay()];
+            sons[1].innerHTML = date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+            sons[2].innerHTML= date.getDate();
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <p><!-- 2018-08-14 星期二 --></p>
+        <p></p>
+        <span><!-- 14 --></span>
+    </div>
+</body>
+</html>

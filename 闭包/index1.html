@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>闭包与变量</title>
+</head>
+<body>
+    <script>
+        function fun(){
+            var result = new  Array();
+
+            for (var i = 0; i<10; i++){
+                //将每一个function当做数组中的一个元素放到result数组中
+                //每一个function只能保存一个值
+                //result【function,function,function,function,....】
+                //每一个function代表一个返回值num
+                result[i] = function(num){
+                    debugger
+                    return function(){
+                        debugger
+                        return num;
+                    }
+                    debugger
+                }(i);//此处的i相当于引用了这个匿名函数function（i）；将i的值复制给num
+                debugger
+            }
+            /* for(var i = 0 ; i<10; i++){
+                debugger
+                result[i] = function(){
+                    debugger
+                    return i;
+                    debugger
+                }
+            } */
+            debugger
+            return result;
+            console.log(result);
+        }
+        fun();
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米手机广告动画</title>
+    <style>
+        #box{
+            width: 512px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+        }
+        #box span{
+            width: 100%;
+            height: 200px;
+            position: absolute;
+            cursor: pointer;
+        }
+        #pic{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .up{
+            top: 0;
+        }
+        .down{
+            bottom:0;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            function $(id){
+                return document.getElementById(id);
+            }
+            var num = 0;
+            $('up').onmouseover=function(){
+                timer=setInterval(function(){
+                    num--;
+                    num>= -1070 ? $('pic').style.top=num+"px" : clearInterval(timer);
+                    /* if(num>= -1070){
+                        $('pic').style.top=num+"px";
+                    }else{
+                        return arguments.callee;
+                    } */
+                },15)
+                /* $('up').onmouseout=function(){
+                    clearInterval(timer);
+                } */
+            }
+
+            $('down').onmouseover=function(){
+                clearInterval(timer);
+                timer=setInterval(function(){
+                    num++;
+                    num<0 ? $('pic').style.top=num+"px" : clearInterval(timer);
+                    /* if(num < 0){
+                        $('pic').style.top=num+"px";
+                    }else{
+                        return arguments.callee;
+                    } */
+                    
+                },30)
+            }
+
+            $('down').parentNode.onmouseout=function(){
+                clearInterval(timer);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <img src="mi.png" alt="" id="pic">
+        <span class="up" id="up"></span>
+        <span class="down" id="down"></span>
+    </div>
+</body>
+</html>

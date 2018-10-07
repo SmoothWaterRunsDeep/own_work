@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>京东轮播图</title>
+    <style>
+        ul,ol{
+            list-style: none;
+        }
+
+        .box{
+            height: 454px;
+            width: 730px;
+            overflow: hidden;
+            margin: 100px auto;
+            position: relative;
+        }
+        .circle{
+            width: 200px;           
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            margin-left: -10px;
+            
+        }
+        .circle span{
+            float: left;
+            height: 18px;
+            width: 18px;
+            line-height: 18px;
+            background: pink;
+            border-radius:50%;
+            text-align: center;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        .circle span.current{
+            background: purple;
+        }
+    </style>
+<!--     <script>
+        window.onload=function(){
+            var box=document.getElementById('box');
+            var circle=document.createElement('div');
+            circle.setAttribute('class','circle');
+            box.appendChild(circle);
+            var uls = document.getElementById('box_ul');
+            var lis = uls.children;
+            var len = lis.length;
+            for(var i=0; i<len; i++){
+                var newspan = document.createElement('span');
+                newspan.innerHTML= i+1;
+                circle.appendChild(newspan);                               
+            }
+            var childs=circle.children;
+            childs[0].setAttribute('class','current');
+            
+        }
+    </script> -->
+<!--     <script>
+        window.onload=function(){
+            var box = document.getElementById('box');
+            var circle = document.createElement('div');
+            box.appendChild(circle);
+            circle.setAttribute('class','circle');
+            var ul = document.getElementById('box_ul');
+            var lis=ul.children;
+            var len = lis.length;
+            for(var i=0 ; i<len; i++){
+                var newspan = document.createElement('span');
+                circle.appendChild(newspan);
+                newspan.innerHTML=i+1;
+            }
+            var childs = circle.children;
+            childs[0].setAttribute('class','current');
+        }
+    </script> -->
+    <script>
+        window.onload=function(){
+            var box =document.getElementById('box');
+            var circle = document.createElement('div');
+            box.appendChild(circle);
+            circle.setAttribute('class','circle');
+            var ul =document.getElementById('box_ul');
+            var lis=ul.children;
+            var len=lis.length;
+            
+            for(var i=0; i<len; i++){
+                var newspan=document.createElement('span');
+                circle.appendChild(newspan);
+                newspan.innerHTML=i+1;
+            }
+            var childs=circle.children;
+            childs[0].setAttribute('class','current');
+        }
+    </script>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="silder">
+            <ul id="box_ul">
+                <li><img src="images/11.jpg" alt=""></li>
+                <li><img src="images/22.jpg" alt=""></li>
+                <li><img src="images/33.jpg" alt=""></li>
+                <li><img src="images/44.jpg" alt=""></li>
+                <li><img src="images/55.jpg" alt=""></li>
+                <li><img src="images/66.jpg" alt=""></li>
+            </ul>
+        </div>
+<!--         <div class="circle">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+                <span>6</span>
+        </div> -->
+    </div>
+
+</body>
+</html>

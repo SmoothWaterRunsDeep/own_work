@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>验证文件格式</title>
+    <script>
+        window.onload=function(){
+            var file = document.getElementById('file');
+            file.onchange=function(){
+                var path = this.value;
+                var form = path.substr(path.lastIndexOf('.')).toUpperCase();
+                if(form=='.JPG'||form=='.PNG'){
+                    this.nextSibling.innerHTML='文件格式正确';
+                }else{
+                    this.nextSibling.innerHTML='文件格式错误';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="file" id="file"><span></span>
+</body>
+</html>

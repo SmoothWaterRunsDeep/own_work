@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            margin: 100px auto;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var input = document.getElementById('input');
+            var btn = document.getElementById('btn');
+            btn.onclick = function () {
+                var val = input.value;
+                switch (val) {
+                    case '苹果':
+                        alert('苹果5元一斤');
+                        break;
+                    case '香蕉':
+                        alert('香蕉3元一斤');
+                        break;
+                    case '大白菜':
+                        alert('大白菜9毛一斤');
+                        break;
+                    default:
+                        alert('今天没有进货');
+                }
+
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" id="input">
+        <button id="btn">查询价格</button>
+    </div>
+
+</body>
+
+</html>

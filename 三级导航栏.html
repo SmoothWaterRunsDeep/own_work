@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		 .clearfix { *zoom: 1;} 
+		.clearfix:before, .clearfix:after { display: table; line-height: 0; content: "";}
+		.clearfix:after { clear: both;}
+		*{margin: 0; padding: 0}
+		.nav{
+			box-sizing: border-box;
+			height: 40px;
+			width: 453px;
+			margin: 0 auto;
+			background: red;
+			list-style: none;			
+		}
+		.nav>li{
+			width: 150px;
+			float: left;
+			text-align: center;
+			text-decoration: none;
+			font-size: 14px;
+			line-height: 40px;
+			border-right: 1px white solid;
+		}
+		.nav li a{
+			text-decoration: none;
+			color: white;
+		}
+		.nav li ul{
+			list-style: none;
+			flex: 1;
+		}
+		.nav li>ul{
+			background: blue;
+			display: none;
+		}
+		.nav li:hover>ul{
+			display: block;
+		}
+		.nav ul li{
+			position: relative;
+			width: 150px;
+			border-bottom: 1px white solid;
+		}
+		.nav ul li ul{
+			position: absolute;
+			left: 150px;
+			top: 0;
+			background: green;
+			color: red;
+		}
+		
+	</style>
+
+	<title>Document</title>
+</head>
+<body>
+	<ul class="nav">		
+		<li><a href="">首页</a></li>		
+		<li>
+		<a href="">家用电器</a>
+			<ul>
+				<li>
+					<a href="">冰箱</a>
+					<ul>
+						<li><a href="">格力</a></li>
+						<li><a href="">海尔</a></li>
+						<li><a href="">东芝</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="">空调</a>
+					<ul>
+						<li><a href="">格力</a></li>
+						<li><a href="">奥克斯</a></li>
+						<li><a href="">美的</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="">彩电</a>
+					<ul>
+						<li><a href="">长虹</a></li>
+						<li><a href="">小米</a></li>
+						<li><a href="">三星</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="">手机电脑</a>
+			<ul>
+				<li>
+					<a href="">一加手机</a>
+					<ul>
+						<li><a href="">一加手机3</a></li>
+						<li><a href="">一加手机3T</a></li>
+						<li><a href="">一加手机5</a></li>
+						<li><a href="">一加手机5T</a></li>
+						<li><a href="">一加手机6</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="">华为手机</a>
+					<ul>
+						<li><a href="">华为mate系列</a></li>
+						<li><a href="">华为nova系列</a></li>
+						<li><a href="">华为honor系列</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="">Dell电脑</a>
+					<ul>
+						<li><a href="">Dell灵越系列</a></li>
+						<li><a href="">Dell游侠系列</a></li>
+						<li><a href="">Dell外星人系列</a></li>
+					</ul>
+				</li>					
+			</ul>
+		</li>
+	</ul>
+</body>
+</html>

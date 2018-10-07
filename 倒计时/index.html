@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 500px;
+            margin:100px auto;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var endTime= new Date("2018/8/23 12:00:00");
+            var box = document.getElementById('box');
+            /* console.log(endTime); */
+            setInterval(clock,1000);
+            function clock(){
+                var nowTime = new Date();
+                /* console.log(nowTime); */
+                var seconds = parseInt((endTime.getTime()-nowTime.getTime())/1000);
+                /* console.log(seconds); */
+                var day = parseInt(seconds/3600/24); 
+                /* console.log(day) ;  */           
+                var hour = parseInt(seconds/3600%24);
+                var minute = parseInt(seconds/60%60);
+                var second = parseInt(seconds%60);
+                day<10 ? day="0"+day : day;
+                hour<10 ? hour="0"+hour : hour;
+                minute<10 ? minute="0"+minute : minute;
+                second<10 ? second="0"+second : second;
+
+                box.innerHTML = "距离七夕情人节："+day+"天"+hour+"小时"
+                +minute+"分钟"+ second+"秒";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+    
+</body>
+</html>

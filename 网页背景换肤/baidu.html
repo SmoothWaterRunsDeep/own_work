@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: url(./images/fate.jpg) no-repeat top center;
+        }
+
+        .box {
+            height: 200px;
+            background: rgb(255, 255, 255, .3);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .box img {
+            cursor: pointer;
+            padding-right: 20px;
+            padding-top: 50px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var pic1 = document.getElementById("pic1");
+            var pic2 = document.getElementById("pic2");
+            var pic3 = document.getElementById("pic3");
+            var pic4 = document.getElementById("pic4");
+            pic1.onclick = function () {
+                document.body.style.backgroundImage = "url(images/fate.jpg)";
+            }
+            pic2.onclick = function () {
+                document.body.style.backgroundImage = "url(images/fate2.jpg)";
+            }
+            pic3.onclick = function () {
+                document.body.style.backgroundImage = "url(images/fate3.jpg)"
+            }
+            pic4.onclick = function () {
+                document.body.style.backgroundImage = "url(images/fate4.jpg)"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <img src="images/fate.jpg" alt="" id="pic1" width="150">
+        <img src="images/fate2.jpg" alt="" id="pic2" width="150">
+        <img src="images/fate3.jpg" alt="" id="pic3" width="150">
+        <img src="images/fate4.jpg" alt="" id="pic4" width="150">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            function $(id) {
+                return document.getElementById(id);
+            }
+            $("btn").onclick = function () {
+                alert($('text').value);
+                if ($('text').value == '张昭') {
+                    alert("恭喜中奖")
+                } else {
+                    alert("查无此人")
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" id="text" value="请输入...">
+    <button id="btn">查询</button>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span,
+        li {
+            margin: 5px;
+        }
+
+        ul {
+            list-style: none;
+        }
+        li.hover{
+            background: #cccccc !important;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var lis = document.getElementsByTagName('li');
+            /* alert(lis.length); */
+            for(var i=0; i<lis.length; i++){
+               /*  if(i%2==0){
+                    lis[i].style.background="red";
+                }else if(i%2!=0){
+                    lis[i].style.background='green';
+                } */
+                if(i%2==0){
+                    lis[i].style.background='#eee';
+                }
+                lis[i].onmouseover=function(){
+                    this.className='hover';
+                }
+                lis[i].onmouseout=function(){
+                    this.className='';
+                }
+            }
+        }
+    </script>
+<!--     <script>
+        window.onload=function(){
+            var lis = document.getElementsByTagName('li');
+            for(var i=0; i<lis.length; i++){
+/*                 if(i%2==0){
+                    lis[i].style.background='pink';
+                }else{
+                    lis[i].style.background='yellow';
+                } */
+                lis[i].onmouseover=function(){
+                    this.className='hover';
+                }
+                lis[i].onmouseout=function(){
+                    this.className='';
+                }
+            }
+        }
+    </script> -->
+</head>
+
+<body>
+    <ul>
+        <li>
+            <span>上证指数</span>
+            <span>1010</span>
+            <span>32432</span>
+            <span>435345</span>
+        </li>
+        <li>
+            <span>上证指数</span>
+            <span>1010</span>
+            <span>32432</span>
+            <span>435345</span>
+        </li>
+        <li>
+            <span>上证指数</span>
+            <span>1010</span>
+            <span>32432</span>
+            <span>435345</span>
+        </li>
+        <li>
+            <span>上证指数</span>
+            <span>1010</span>
+            <span>32432</span>
+            <span>435345</span>
+        </li>
+        <li>
+            <span>上证指数</span>
+            <span>1010</span>
+            <span>32432</span>
+            <span>435345</span>
+        </li>
+        <li>
+            <span>上证指数</span>
+            <span>1010</span>
+            <span>32432</span>
+            <span>435345</span>
+        </li>
+        <li>
+            <span>上证指数</span>
+            <span>1010</span>
+            <span>32432</span>
+            <span>435345</span>
+        </li>
+        <li>
+            <span>上证指数</span>
+            <span>1010</span>
+            <span>32432</span>
+            <span>435345</span>
+        </li>
+        <li>
+            <span>上证指数</span>
+            <span>1010</span>
+            <span>32432</span>
+            <span>435345</span>
+        </li>
+        <li>
+            <span>上证指数</span>
+            <span>1010</span>
+            <span>32432</span>
+            <span>435345</span>
+        </li>
+    </ul>
+</body>
+
+</html>

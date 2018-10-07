@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>匀速运动</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            top: 50px;
+            background: pink;
+        }
+        #box1{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            top: 200px;
+            background: yellow;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            top: 350px;
+            background: green;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            function $(id){
+                return document.getElementById(id);
+            }
+            var timer = null;
+            var num = 0;
+            var leader = 0;
+            var begin = 0;
+            var target = 2000;
+            $('start').onclick = function(){
+                timer = setInterval(function(){
+                    num ++ ;
+                    /* num>=1400 ? num = 0 : num; */
+                    if(num>=1400){
+                        num = 0;
+                    }else{
+                         num=num;
+                    }
+                    leader>=1400 ? leader = 0 : leader;
+                    begin>=1400 ? begin = 0 : begin;
+                    leader = leader + (target-leader)/100;
+                    begin = begin + (begin + target)/100;
+                    $('box').style.left = num + 'px';
+                    $('box1').style.left = leader + 'px';
+                    $('box2').style.left = begin + 'px';
+                },10)
+            }
+            $('stop').onclick = function(){
+                clearInterval(timer);
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="start">开始</button>
+    <button id="stop">停止</button>
+    <div id="box">匀速运动</div>
+    <div id="box1">加速运动</div>
+    <div id="box2">加速运动</div>
+</body>
+</html>

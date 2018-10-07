@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .search {
+            width: 200px;
+            height: 30px;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        #input {
+            width: 200px;
+            height: 24px;
+        }
+
+        #massage {
+            color: #ccc;
+            position: absolute;
+            top: 8px;
+            left: 20px;
+            cursor: text;
+            font-size: 12px;
+        }
+    </style>
+    <!--     <script>
+        window.onload=function(){
+            function $(id){
+                return document.getElementById(id);
+            }
+            $('input').oninput=function(){
+                $('massage').style.display='none';                
+            }
+            $('input').onblur=function(){
+                if($('input').value==''){
+                    $('massage').style.display='block';
+                }
+            }            
+        }
+    </script> -->
+    <!--     <script>
+        window.onload=function(){
+            function $(id){
+                return document.getElementById(id);
+            }
+            $('input').oninput=function(){
+                if(this.value==''){
+                    $('massage').style.display='block';
+                }else{
+                    $('massage').style.display='none';
+                }
+            }
+        }
+    </script> -->
+    <script>
+        window.onload = function () {
+            function $(id) {
+                return document.getElementById(id);
+            }
+            $('input').focus();
+            $('input').oninput = $('input').onpropertychange = function () {
+                if (this.value == '') {
+                    $('massage').style.display = 'block';
+                } else {
+                    $('massage').style.display = 'none';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="search">
+        <input type="text" id="input">
+        <label for="input" id="massage">必败的国际大牌</label>
+    </div>
+</body>
+
+</html>

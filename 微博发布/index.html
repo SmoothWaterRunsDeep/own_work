@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+        *{
+            margin: 0; padding: 0;
+        }
+        .box{
+            width: 600px;
+            margin: 100px auto;
+            border: 1px #000 solid;
+        }
+        textarea{
+            width: 450px;
+            height: 200px;
+            resize:none; 
+            
+        }
+        .content{
+            margin: 30px 0;
+        }
+        ul{
+            
+            margin-left: 80px;
+            padding-bottom: 30px;
+        }
+        ul li{
+            width: 450px;
+            line-height: 30px;
+            border-bottom: 1px #000 dashed;
+        }
+        ul li a{
+            float: right;
+            line-height: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            color: blueviolet;
+        }
+    </style>
+<!--     <script>
+        window.onload = function(){
+            var box = document.getElementById('box');
+            var ul = document.createElement('ul');           
+            box.appendChild(ul);
+            var btn = document.getElementById('btn');
+            var txt = document.getElementsByTagName('textarea')[0];
+            
+            btn.onclick=function(){
+                if(txt.value==''){
+                    alert('输入不能为空！')
+                    return false;
+                }//检查输入框是否为空，则结束函数
+
+                var li = document.createElement('li');
+                li.innerHTML= txt.value + "<a herf='javascript:'>删除</a> " ;
+                var childs= ul.children;//得出ul下面所有子节点的数组
+                var len=childs.length;
+                if(len==0){
+                    ul.insertBefore(li,null);//当li标签没有时用就直接添加；
+                }else{
+                    ul.insertBefore(li,childs[0]);//当li标签存在时，就将后写的微博放在最上面。倒置
+                }
+                txt.value='';//清除textarea中的内容
+
+                var as=document.getElementsByTagName('a');
+                for(var i=0 ;i<as.length; i++){
+                    as[i].onclick=function(){
+                        ul.removeChild(this.parentNode);
+                    }
+                }//为了删除li标签，利用li标签中的子元素a onclick删除，利用从a标签中得到的as数组
+                //由于删除标签再li标签里，删除标签起作用以后是需要删除他的父级元素li，我们可以利用ul的子级元素是li标签来删除。
+                //利用this 来与as[i]相对应删除对应的li标签。           
+            }
+        }
+    </script> -->
+    <script>
+        window.onload=function(){
+            var box=document.getElementById('box');
+            var ul=document.createElement('ul');
+            box.appendChild(ul);
+            var txt = document.getElementsByTagName('textarea')[0];
+            var btn = document.getElementById('btn');
+            var childs=ul.children;
+            var len=childs.length;
+            
+            btn.onclick=function(){
+                if(txt.value==''){
+                    alert('输入内容不能为空！')
+                    return false;
+                }else{
+                    var li=document.createElement('li');
+                    if(len==0){
+                        ul.insertBefore(li,null);
+                    }else{
+                        ul.insertBefore(li,childs[0]);
+                    }                    
+                    li.innerHTML = txt.value+"<a herf='javascript:'>删除</a>";
+                    txt.value='';  
+                    var as = document.getElementsByTagName('a');
+                    for(var i=0 ;i<as.length; i++){
+                        as[i].onclick=function(){
+                            ul.removeChild(this.parentNode);
+                        }
+                    }                                
+                }               
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="content">
+            微博发布：
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <button id="btn">发布</button>
+        </div>  
+<!--         <ul id="ul">
+            <li>1234</li>
+            <li>1234</li>
+            <li>1234</li>
+            <li>1234</li>
+        </ul> -->
+    </div>
+</body>
+</html>

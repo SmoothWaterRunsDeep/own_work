@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function student(name,age,sex){
+            this.name = name;
+            this.age = age;
+            this.sex = sex;
+        }
+        /* student.prototype.weight = "85kg";
+        student.prototype.height = '188cm';
+        student.prototype.eat = function(){
+            console.log("中午吃饭");
+        }
+        student.prototype.study = function(){
+            console.log('构造函数，原型对象，实例对象的学习');
+        } */
+        student.prototype = {
+            constructor = student,
+            height = '188cm',
+            weight = '70kg',
+            eat = function(){
+                console.log('我要吃好多的肉');
+            },
+            study = function(){
+                console.log('学习编程让我掉了好多头发');
+            }
+        };
+        var per1 = new student("张昭",22 , '男');
+        console.dir(per1);
+        console.dir(student);
+        per1.eat();
+        per1.study();
+    </script>
+</body>
+</html>

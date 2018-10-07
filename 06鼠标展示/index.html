@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            list-style:none;
+        }
+        #box{
+            width: 360px;
+            height: 70px;
+            padding-top: 360px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            overflow: hidden;
+            background: url("images/01big.jpg") no-repeat ;
+            
+        }
+        #box ul{
+            overflow: hidden;
+        }
+        #box li{
+            float: left;
+            border-top: #ccc 1px solid;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            function zz(li,bg){
+                var li=document.getElementById(li);
+                var box=document.getElementById("box");
+                li.onmouseover=function(){
+                    box.style.backgroundImage= bg;
+                }
+            }
+            zz("li01","url('images/01big.jpg')");
+            zz("li02","url('images/02big.jpg')");
+            zz("li03","url('images/03big.jpg')");
+            zz("li04","url('images/04big.jpg')");
+            zz("li05","url('images/05big.jpg')");
+
+        }
+    </script>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li id="li01"><img src="images/01.jpg" alt=""></li>
+            <li id="li02"><img src="images/02.jpg" alt=""></li>
+            <li id="li03"><img src="images/03.jpg" alt=""></li>
+            <li id="li04"><img src="images/04.jpg" alt=""></li>
+            <li id="li05"><img src="images/05.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

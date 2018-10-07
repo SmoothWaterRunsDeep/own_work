@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>闭包</title>
+</head>
+
+<body>
+    <script>
+        function creatCompare(name) {
+
+            //利用return将匿名函数的作用域加入到creatCompare的作用域链中与之共存
+            return function (object1, object2) {//将两个对象当做参数传入
+                var value1 = object1[name];
+                var value2 = object2[name];
+            //比较两个对象之间name属性值之间的大小
+                if (value1 < value2) {
+                    return -1;
+                } else if (value1 > value2) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+        }
+        var compare = creatCompare('name');
+        var result = compare({name: '1'},{name: '2'});
+        console.log(result);
+        compare = null;//解除对匿名函数的引用来释放内存
+        var result1 = compare({name: '1'},{name: '2'});
+        console.log(result1);
+    </script>
+</body>
+
+</html>

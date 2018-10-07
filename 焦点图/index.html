@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>焦点图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        img {
+            vertical-align: top;
+        }
+
+        #box {
+            width: 490px;
+            height: 170px;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #box ul {
+            width: 500%;
+            height: 170px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+
+        #box ul li {
+            float: left;
+        }
+
+        ol {
+            width: 100px;
+            height: 20px;
+            position: absolute;
+            left: 50%;
+            bottom: 10px;
+            margin-left: -50px;
+            z-index: 3;
+        }
+
+        ol li {
+            width: 16px;
+            height: 16px;
+            font-size: 14px;
+            float: left;
+            margin: 2px;
+            text-align: center;
+            line-height: 16px;
+            background: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .current {
+            background: rgb(17, 233, 64);
+        }
+
+        span {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 30px;
+            text-align: center;
+            cursor: pointer;
+            background: #000;
+            opacity: 0.3;
+            color: #fff;
+            border: #fff 1px solid;
+            position: absolute;
+            top: 50%;
+            margin-top: -20px;
+            display: none;
+        }
+
+        .left {
+            left: 5px;
+        }
+
+        .right {
+            right: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function $(id) {
+                return document.getElementById(id);
+            }
+            var box = document.getElementById('box');
+            var photo = box.children[0];
+            var lis = box.children[1].children;
+            var len = lis.length;
+            var leader = 0,
+                target = 0,
+                count = 0;
+            var timer = null;
+            var play = null;
+            var h = 0;
+
+            clickLeft();
+            clickRight();
+
+            for (var i = 0; i < len; i++) {
+                lis[i].index = i;
+                lis[i].onmouseover = function () {
+                    clear();
+                    this.className = 'current';
+                    sport(-this.index * 490);
+
+
+                    if (this.index == count) {
+                        clickLeft();
+                        clickRight();
+                    } else {
+                        count = this.index;
+                        clickLeft();
+                        clickRight();
+                    }
+                }
+            }
+
+            $("box").onmouseover = function () {
+                $('left').style.display = 'block';
+                $('right').style.display = 'block';
+            }
+
+            $("box").onmouseout = function () {
+                $('left').style.display = 'none';
+                $('right').style.display = 'none';
+
+            }
+
+            function sport(target) {
+                clearInterval(timer);
+                clearInterval(play);
+                timer = setInterval(function () {
+                    leader = leader + (target - leader) / 10;
+                    photo.style.left = leader + "px";
+                }, 30);
+            }
+
+            function autoPlay() {
+                play = setInterval(function () {
+                    h++;
+                    h >= len ? h = 0 : h;
+                    photo.style.left = -h * 490 + "px";
+                    console.log(h);
+                    clear();
+                    lis[h].className = 'current';
+                }, 3000);
+            }
+            autoPlay();
+
+        
+
+            function clear() {
+                for (var j = 0; j < len; j++) {
+                    lis[j].className = " ";
+                }
+            }
+        
+
+            function clickRight() {
+                $("right").onclick = function () {
+                    count++;
+                    count >= 5 ? count = 0 : count;
+                    target <= -1960 ? target = 0 : target -= 490;
+                    console.log(count);
+                    sport(target);
+                    clear();
+                    lis[count].className = "current";
+                }
+            }
+
+            function clickLeft() {
+                $("left").onclick = function () {
+                    count--;
+                    count < 0 ? count = 4 : count;
+                    target >= 0 ? target = -1960 : target += 490;
+                    console.log(count);
+                    sport(target);
+                    clear();
+                    lis[count].className = "current";
+                }
+            }
+
+        }
+
+        
+    </script>
+</head>
+
+<body>
+    <div id="box">
+
+        <ul>
+            <li>
+                <img src="images/01.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/02.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/03.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/04.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/05.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/01.jpg" alt="">
+            </li>
+        </ul>
+
+        <ol>
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+        <span class="left" id="left">
+            <</span>
+                <span class="right" id="right">></span>
+
+    </div>
+</body>
+
+</html>

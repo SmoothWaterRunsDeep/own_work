@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>星座运势</title>
+    <style>
+        .box {
+            width: 280px;
+            height: 183px;
+            margin: 100px auto;
+            border: 1px #ccc solid;
+        }
+
+        .title {
+            text-indent: 15px;
+        }
+
+        .title>a {
+            color: #0873c0;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .top {
+            width: 240px;
+            height: 50px;
+            padding: 0 19px;
+            font-size: 12px;
+            overflow: hidden;
+        }
+
+        .topRight {
+            width: 50px;
+            height: 50px;
+            background: url(images/icon.png) no-repeat;
+            float: left;
+        }
+
+        .topLeft {
+            float: left;
+            margin-left: 5px;
+            line-height: 18px;
+        }
+
+        #select {
+            width: 145px;
+            height: 19px;
+        }
+
+        .yunshi {
+            width: 80px;
+            height: 13px;           
+            background: url(images/yunshi.png) no-repeat;
+            position: relative;
+        }
+        .star{
+            width: 80px;
+            height: 13px;           
+            background: url(images/yunshi.png) no-repeat left bottom;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .bottom {
+            font-size: 14px;
+            width: 240px;
+            margin: 10px auto 0;
+        }
+
+    </style>
+    <script>
+        window.onload=function(){
+            function $(id){
+                return document.getElementById(id);
+            }
+            var texts=['白羊座的内容','金牛座的内容','双子座的内容','巨蟹座的内容','狮子座的内容',
+            '处女座的内容','天秤座的内容','天蝎座的内容','射手座的内容',
+            '摩羯座的内容','水瓶座的内容','双鱼座的内容'];
+            var yunshis=[10,9,6,9,7,8,5,9,7,8,8,8];
+
+            $('select').onchange= function(){               
+                $('icon').style.backgroundPositionY= (-this.value*50)+'px';
+                $('bottom').innerHTML=texts[this.value];
+                $('star').style.width=yunshis[this.value]*8 + 'px';
+            }
+           
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="title">
+            <a href=""> 星座运势</a>
+        </div>
+        <div class="top">
+            <div class="topRight" id="icon"></div>
+            <div class="topLeft">
+                <div class="topLeftTop">
+                    <select name="" id="select">
+                        <option selected="selected" value="0">白羊座(03.21-04.19)</option>
+                        <option value="1">金牛座(04.20-05.20)</option>
+                        <option value="2">双子座(05.21-06.21)</option>
+                        <option value="3">巨蟹座(06.22-07.22)</option>
+                        <option value="4">狮子座(07.23-08.22)</option>
+                        <option value="5">处女座(08.23-09.22)</option>
+                        <option value="6">天秤座(09.23-10.23)</option>
+                        <option value="7">天蝎座(10.24-11.22)</option>
+                        <option value="8">射手座(11.23-12.21)</option>
+                        <option value="9">摩羯座(12.22-01.19)</option>
+                        <option value="10">水瓶座(01.20-02.18)</option>
+                        <option value="11">双鱼座(02.19-03.20)</option>
+                    </select>
+                </div>
+                今日运势：
+                <span class="yunshi" id="yunshi">
+                    <span class="star" id="star"></span>
+                </span>
+            </div>
+        </div>
+        <div class="bottom" id="bottom">
+            工作状态回升，更踏实肯干，享乐之心被理智克制。沟通或出行也比日前顺畅。有伴的白羊可以促进感...[详细]
+        </div>
+       
+    </div>
+    <source src="//music.163.com/outchain/player?type=2&id=462391069&auto=1&height=66"">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=462391069&auto=1&height=66"></iframe>
+</body>
+
+</html>

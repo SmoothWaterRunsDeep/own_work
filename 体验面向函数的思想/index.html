@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>体验面向函数与面向对象的思想</title>
+    <style>
+        div{
+            height: 300px;
+            width: 300px;
+            background-color: rgb(231, 9, 9);
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">改变颜色</button>
+    <div id="show"></div>
+
+    <script>
+        /* var btn = document.getElementById('btn');
+        var show = document.getElementById('show');
+        btn.onclick = function(){
+            show.style.backgroundColor = 'blue';
+        } */
+        function ChangeStyle(btnId,divId,color){
+            this.btnobj=document.getElementById(btnId);
+            this.divobj=document.getElementById(divId);
+            this.color = color;
+        }
+        ChangeStyle.prototype.init = function(){
+            var that = this;
+            this.btnobj.onclick = function(){
+                that.divobj.style.backgroundColor = that.color;
+            }
+        }
+
+        var cs = new ChangeStyle("btn","show",'blue');
+        cs.init();
+    </script>
+</body>
+</html>

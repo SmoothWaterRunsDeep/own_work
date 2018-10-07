@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            margin: 20px 0 0 20px;
+            background: #000;
+            text-align: center;
+            color: white;
+            line-height: 100px;
+            display: none;
+        }
+        button{
+            padding-right: 20px;
+        }
+    </style>
+    <script>
+        function zz(obj){
+            var cometure=document.getElementById(obj);
+            cometure.style.display='block';
+        }
+    </script>
+
+</head>
+<body>
+    <button onclick="zz('demo1')">按钮1</button>
+    <button onclick="zz('demo2')">按钮2</button>
+    <button onclick="zz('demo3')">按钮3</button>
+    <button onclick="zz('demo4')">按钮4</button>
+    <div id="demo1">1</div>
+    <div id="demo2">2</div>
+    <div id="demo3">3</div>
+    <div id="demo4">4</div>
+</body>
+</html>

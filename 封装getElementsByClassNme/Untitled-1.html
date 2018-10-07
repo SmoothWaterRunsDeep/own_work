@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            background: blueviolet;
+            width: 100px;
+            height: 100px;
+            margin: 20px;
+        }
+    </style>
+<!--     <script>
+        window.onload=function(){
+            function cla(className){
+                if(className==document.getElementsByClassName){
+                    return document.getElementsByClassName(className);
+                }
+                var dom=document.getElementsByTagName('div');
+                var arr=[];
+                for(var i=0; i<dom.length; i++){
+                    if(dom[i].className==className){
+                        arr.push(dom[i]);
+                    }
+                }
+                return arr;
+            }
+
+            console.log(cla('demo').length);
+            alert(cla('demo').length);
+        }
+    </script> -->
+
+<!--     <script>
+        window.onload= function(){
+            function cla(classname){
+                if(classname==document.getElementsByClassName){
+                    return document.getElementsByClassName(classname);
+                }
+                var arr=[];
+                var divs=document.getElementsByTagName('div');
+                for(var i=0; i<divs.length; i++){
+                    if(divs[i].className==classname){
+                        arr.push[divs[i]];
+                    }
+                }
+                return arr;
+            }
+
+            alert(cla('demo').length);
+        }
+    </script> -->
+<!--     <script>
+        window.onload=function(){
+            function cla(classname){
+                if(document.getElementsByClassName){
+                    return document.getElementsByClassName(classname);
+                }
+                var divs=document.getElementsByTagName('div');
+                var arr=[];
+                for(var i=0; i<divs.length; i++){
+                    var texts=divs[i].className.split(" ");
+                    for(var j=0;j<texts.length; j++){
+                        if(texts[j]==classname){
+                            arr.push(divs[i]);
+                        }
+                    }
+                
+                    
+                }
+                return arr;
+            }
+            
+            console.log(cla("text"));
+            var test=cla('text');
+            for(var i=0; i<test.length; i++){
+                test[i].style.background='red';
+            }
+            
+        }
+    </script> -->
+    <script>
+        window.onload = function(){
+            function getcla(classname,id){
+                
+/*                 if(id){
+                    var eleId=document.getElementById(id)
+                    return eleId.getElementsByClassName(classname);
+                }else{
+                    return document.getElementsByClassName(classname);
+                }//可以正常执行getelementsbyclassname */
+
+                
+                if(id){
+                    var eleId=document.getElementById(id);
+                    var divs=eleId.getElementsByTagName('div');
+                    
+                }else{
+                    var divs=document.getElementsByTagName('div');                   
+                }
+
+                var arr=[];
+                for(var i=0; i<divs.length; i++){
+                    var txtarr=divs[i].className.split(" ");
+                    for(var j=0;j<txtarr.length; i++){
+                        if(txtarr[j]==classname){
+                            arr.push(divs[i]);
+                        }
+                    }
+                }
+                
+                return arr;
+
+            }
+            //console.log(getcla("text","one").length);
+            var aa = getcla('text','one');
+            var bb = getcla('demo','one');
+            for(var i=0 ; i<aa.length; i++){
+                aa[i].style.background='blue';
+                bb[i].style.background='red';
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div class="demo"></div>
+    <div id="one" class="text demo">
+        <div class="text"></div>
+        <div class="demo"></div>
+        <div></div>
+        <div class="demo"></div>
+        <div class="demo text"></div>
+        <div class="text"></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

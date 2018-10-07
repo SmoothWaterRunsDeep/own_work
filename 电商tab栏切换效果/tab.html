@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 500px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        .header div {
+            cursor: pointer;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            float: left;
+            background: green;           
+        }
+
+        .bottom div {
+            background: blue;
+            width: 100%;
+            height: 200px;
+            margin-top: 10px;
+            display: none;
+            color: red;
+            padding-top: 50px;
+            font-size: 30px;
+        }
+
+        .select {
+            color: #5eff5e;
+            background: blue;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var btns = document.getElementById('top').getElementsByTagName('div');
+            var divs = document.getElementById('divs').getElementsByTagName('div');
+            var len = btns.length;
+            for (var i = 0; i < len; i++) {
+                btns[i].index = i;
+                btns[i].onmouseover = function () {
+                    for (var i = 0; i < len; i++) {
+                        btns[i].style.background = 'green';
+                    }
+                    this.style.background = 'blue';
+
+                    for (var i = 0; i < len; i++) {
+                        divs[i].style.display = 'none';
+                    }
+                    divs[this.index].style.display = 'block';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <div id="top" class="header">
+            <div style='background: blue;'>新闻</div> 
+            <div>体育</div> 
+            <div>娱乐</div> 
+            <div>八卦</div> 
+            <div>游戏</div> 
+        </div>
+        <div class="bottom" id="divs">
+            <div style="display:block;">新闻</div>
+            <div>体育</div>
+            <div>娱乐</div>
+            <div>八卦</div>
+            <div>游戏</div>
+        </div>
+    </div>
+</body>
+
+</html>

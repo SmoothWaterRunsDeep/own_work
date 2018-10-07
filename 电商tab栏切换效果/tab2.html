@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .box{
+            margin: 100px auto;
+            width: 400px;
+                     
+        }
+        .top{
+            height: 30px; 
+            text-align: center; 
+        }
+        span{
+            display: inline-block;
+            width: 95px;
+            line-height: 30px;
+            background: pink;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        ul{           
+            margin: 0;
+            width: 100%;
+            
+        }
+        li{
+            list-style: none;
+            height: 240px;
+            background: rgb(200, 22, 245);
+            display: none;
+            text-align: center;
+            line-height: 240px;
+            font-size: 30px;
+            font-weight: bold;
+            color: aqua;
+        }
+        .bg{
+            background: rgb(200, 22, 245);
+        }
+        .block{
+            display: block;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var spans=document.getElementsByTagName('span');
+            var lis=document.getElementsByTagName('li');
+            var len=lis.length;
+            for(var i=0; i<len; i++){
+                spans[i].index=i;
+                spans[i].onmouseover=function(){
+                    for(var j=0 ; j<len; j++){
+                        spans[j].className='';
+                        lis[j].className='';
+                    }
+                    this.className='bg';
+                    lis[this.index].className='block';
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <div class="top">
+            <span class="bg">新闻</span>
+            <span>娱乐</span>
+            <span>八卦</span>
+            <span>财经</span>
+        </div>
+        <ul>
+            <li class="block">新闻</li>
+            <li>娱乐</li>
+            <li>八卦</li>
+            <li>财经</li>
+        </ul>
+    </div>
+
+
+</body>
+
+</html>

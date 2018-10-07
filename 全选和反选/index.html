@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #all {
+            margin: 100px auto;
+            width: 200px;
+        }
+
+        #select {
+            margin-top: 30px;
+        }
+
+        li {
+            list-style: none;
+            text-align: center;
+        }
+    </style>
+    <!--  <script>
+        window.onload = function () {
+            var btns = document.getElementsByTagName('button');
+            var inputs = document.getElementsByTagName('input');
+            var len = inputs.length;
+
+            btns[0].onclick = function () {
+                for (var i = 0; i < len; i++) {
+                    inputs[i].checked = true;
+                }
+            }
+            btns[1].onclick = function () {
+                for (var i = 0; i < len; i++) {
+                    inputs[i].checked = false;
+                }
+            }
+            btns[2].onclick = function () {
+                for (var i = 0; i < len; i++) {
+                    if (inputs[i].checked == true) {
+                        inputs[i].checked = false;
+                    } else if (inputs[i].checked == false) {
+                        inputs[i].checked = true;
+                    }
+                }
+            }
+        }
+    </script> -->
+    <script>
+        window.onload = function () {
+            var btns = document.getElementsByTagName('button');
+            var inputs = document.getElementsByTagName('input');
+            var len = inputs.length;
+
+            function all(flag) {
+                for (var i = 0; i < len; i++) {
+                    inputs[i].checked = flag;
+                }
+            }
+            btns[0].onclick = function () {
+                all(true);
+            }
+            btns[1].onclick = function () {
+                all(false);
+            }
+            btns[2].onclick = function () {
+                for (var i = 0; i < len; i++) {
+                    inputs[i].checked == true ? inputs[i].checked = false : inputs[i].checked = true;
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="all">
+        <div id="btn">
+            <button>全选</button>
+            <button>取消全选</button>
+            <button>反选</button>
+        </div>
+        <div id="select">
+            <li>选项：
+                <input type="checkbox">
+            </li>
+            <li>选项：
+                <input type="checkbox">
+            </li>
+            <li>选项：
+                <input type="checkbox">
+            </li>
+            <li>选项：
+                <input type="checkbox">
+            </li>
+            <li>选项：
+                <input type="checkbox">
+            </li>
+            <li>选项：
+                <input type="checkbox">
+            </li>
+            <li>选项：
+                <input type="checkbox">
+            </li>
+            <li>选项：
+                <input type="checkbox">
+            </li>
+            <li>选项：
+                <input type="checkbox">
+            </li>
+            <li>选项：
+                <input type="checkbox">
+            </li>
+        </div>
+    </div>
+
+</body>
+
+</html>

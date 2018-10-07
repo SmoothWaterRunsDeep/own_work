@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>利用window将随机数对象转变成全局对象</title>
+</head>
+<body>
+<!--     <script>
+        //通过自调用函数产生一个随机数对象，在自调用函数外面，调用该随机数对象方法产生随机数
+        (function(window){
+            function Random(){
+                //仅仅只是声明一个可以产生随机数的构造函数，其中的方法将通过构造函数的原型对象添加
+            };
+            //在原型对象中添加方法，进行数据共享
+            Random.prototype.getRandom = function(max , min) {
+                return Math.floor(Math.random()*(max-min)+min);//通过变量控制随机数的产生范围
+            };
+            //把Random对象暴露给顶级对象window   外部可以直接使用这个对象
+            window.Random = Random;
+        })(window);
+        
+        var rm = new Random();
+        console.log(rm.getRandom(5,0));
+    </script> -->
+    <script>
+        //通过自调用函数产生一个随机数对象，再利用window来转换成一个全局对象，使我们在自调用函数的外面亦可以
+        //使用随机数构造函数中的原型对象中的方法来产生随机数
+        (function(window){
+            function Random(){
+                //先创建一个空的构造函数来利用其原型对象来共享数据，方法节省内存空间
+            }
+            Random.prototype.getRandom = function(max,min){
+                return Math.floor(Math.random()*(max-min)+min);
+            }
+            window.Random = Random;//利用顶级对象来将random变成其中的一种方法，从而达到在全局中可以使用的目的。
+
+        }
+        )(window);
+
+        var num =new Random();
+        console.log(num.getRandom(50,20));
+    </script>
+</body>
+</html>

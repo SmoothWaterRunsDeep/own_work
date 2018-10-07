@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #input,
+        #btn {
+            border-style: none;
+            outline: none;
+        }
+
+        #search {
+            width: 258px;
+            height: 40px;
+            margin: 200px auto;
+            background: #ccc;
+        }
+
+        #input {
+            width: 208px;
+            height: 40px;
+            background: url(images/left.jpg) no-repeat;
+            float: left;
+            padding-left: 8px;
+            color: #ccc;
+        }
+
+        #btn {
+            width: 42px;
+            height: 40px;
+            background: url(images/right.jpg) no-repeat;
+            float: left;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var input = document.getElementById("input");
+            input.onfocus = function () {
+                if (input.value == "请输入...") {
+                    input.value = "";
+                    input.style.color = "black";
+                }
+            }
+            input.onblur = function () {
+                if (input.value == "") {
+                    input.value = "请输入...";
+                    input.style.color = "#ccc";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="search">
+        <input type="text" id="input" value="请输入...">
+        <button id="btn"></button>
+    </div>
+</body>
+
+</html>

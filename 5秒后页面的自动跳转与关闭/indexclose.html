@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>页面的自动关闭</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        p{
+            text-align: center;
+            font-size: 24px;
+        }
+        #left{
+            position: absolute;
+            left: 0;
+
+        }
+        #right{
+            position: absolute;
+            right: 0;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            function $(id){
+                return document.getElementById(id);
+            }
+            setTimeout(closeAD,3000);
+            function closeAD(){
+                $("right").style.display='none';
+                $("left").style.display='none';
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    <img src="images/1.gif" alt="" id="left">
+    <img src="images/2.gif" alt="" id="right">
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+    <p>天王盖地虎，小鸡炖蘑菇</p>
+</body>
+</html>
